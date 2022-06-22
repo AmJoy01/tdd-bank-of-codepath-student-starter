@@ -1,23 +1,38 @@
 import * as React from "react"
 import "./AddTransaction.css"
+import { useState } from "react"
+import axios from "axios"
 
-export default function AddTransaction() {
+
+export default function AddTransaction(props) {
+  const [amount, setAmount] = useState("")
+  const [description, setDescription] = useState("")
+  const [category, setCategory] = useState("")
+  const [isProcessing, setIsProcessing] = useState(false)
+
+  // handleOnSubmit = async () => {
+  //     setIsProcessing(true)
+  //     props.setError(null)      
+
+  //     const newTransaction = { category, description, amount } 
+  // }
+
   return (
     <div className="add-transaction">
       <h2>Add Transaction</h2>
 
-      <AddTransactionForm />
+      <AddTransactionForm name = {props.form}/>
     </div>
   )
 }
 
-export function AddTransactionForm() {
+export function AddTransactionForm(props) {
   return (
     <div className="form">
       <div className="fields">
         <div className="field">
           <label>Description</label>
-          <input />
+          <input placeholder="description"  type="description" />
         </div>
         <div className="field">
           <label>Category</label>
@@ -28,7 +43,7 @@ export function AddTransactionForm() {
           <input />
         </div>
 
-        <button className="btn add-transaction" type="submit">
+        <button className="add-transaction" type="submit" onClick = {() => props.handleOnSubmit}>
           Add
         </button>
       </div>
