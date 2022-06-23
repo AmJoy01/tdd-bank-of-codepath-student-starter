@@ -11,10 +11,10 @@ Your job is to wire up the React UI to interact with the already built Express A
 ### Goals
 
 By the end of this lab you will be able to...
-- [ ] Make HTTP requests from React applications using `axios`
-- [ ] Handle asynchronous functions using `async/await`
-- [ ] Leverage the `useEffect` hook to make API requests when components mount
-- [ ] Store data pulled from a remote API locally with the `useState` hook
+- [x] Make HTTP requests from React applications using `axios`
+- [x] Handle asynchronous functions using `async/await`
+- [x] Leverage the `useEffect` hook to make API requests when components mount
+- [x] Store data pulled from a remote API locally with the `useState` hook
 - [ ] Create `onClick` handlers for buttons
 - [ ] Manage the internal state of a form input with use state and an `onChange` handler.
 - [ ] Create `onSubmit` handlers for forms
@@ -86,9 +86,9 @@ Don't be alarmed if some tests aren't passing when navigating to a route differe
 
 Start by installing the core dependencies for this project.
 
-- [ ] Navigate into the `bank-of-codepath-express-api` directory and run `npm install` to get the appropriate dependencies. Make sure the express server is running with `npm run dev` or `npm start` in the `api` directory.
-- [ ] In a new terminal window, navigate into the `bank-of-codepath-ui` directory and run `npm install` to download the frontend dependencies. - [ ] Run `npm run dev` to get the React app started up.
-- [ ] Open up `http://localhost:3000` in the browser to see the current state of the app. The API should be running at `http://localhost:3001`. That value is also stored in the `API_BASE_URL` variable inside the `constants.js` file in the frontend repo.
+- [x] Navigate into the `bank-of-codepath-express-api` directory and run `npm install` to get the appropriate dependencies. Make sure the express server is running with `npm run dev` or `npm start` in the `api` directory.
+- [x] In a new terminal window, navigate into the `bank-of-codepath-ui` directory and run `npm install` to download the frontend dependencies. - [ ] Run `npm run dev` to get the React app started up.
+- [x] Open up `http://localhost:3000` in the browser to see the current state of the app. The API should be running at `http://localhost:3001`. That value is also stored in the `API_BASE_URL` variable inside the `constants.js` file in the frontend repo.
   - The tests will run immediately as soon as the frontend starts up.
   - They should all be failing, but that's ok. We'll use them to guide our development during this lab.
   - Every time a file is updated, the tests will be re-run.
@@ -96,33 +96,33 @@ Start by installing the core dependencies for this project.
 
 ### Step 2: The `App.jsx` component
 
-  - [ ] Route Components
-    - [ ] Import the `BrowserRouter`, `Routes`, and `Route` components from `react-router-dom`
-    - [ ] Inside the `return` statement in the `App.jsx` component, nest the `BrowserRouter` component inside the `div` element with a `className` of `app`.
-    - [ ] Nest the `Navbar` component inside the `BrowserRouter` component.
-    - [ ] Place the `Home` component inside a `main` tag that is rendered directly after the `Navbar` component.
-  - [ ] Define routes
-    - [ ] Make the first child of the `main` tag the `Routes` component from `react-router-dom`.
-    - [ ] Use the `Route` component to add an index route for the `Home` component at the `/` route
-    - [ ] Import the `TransactionDetail` component into the `App.jsx` component.
-    - [ ] Add a dynamic route with the base path of `transactions` that is used for displaying a single transaction with the `transactionId` path parameter. Display that page with the `TransactionDetail` component.
-  - [ ] State variables
-    - [ ] Create default state and handlers with React's `useState` hook for the following items. These won't cause any tests to pass, but we'll need them for the upcoming tests
-      - [ ] `isLoading` - a boolean representing whether or not the app is currently requesting data from the API
-      - [ ] `transactions` - the list of bank transaction items fetched from the API
-      - [ ] `transfers` - the list of bank transfer items fetched from the API
-      - [ ] `error` - any errors associated with fetching data from the API
-      - [ ] `filterInputValue` - a string value used to create a controlled input in the `FilterInput.jsx` component
+  - [x] Route Components
+    - [x] Import the `BrowserRouter`, `Routes`, and `Route` components from `react-router-dom`
+    - [x] Inside the `return` statement in the `App.jsx` component, nest the `BrowserRouter` component inside the `div` element with a `className` of `app`.
+    - [x] Nest the `Navbar` component inside the `BrowserRouter` component.
+    - [x] Place the `Home` component inside a `main` tag that is rendered directly after the `Navbar` component.
+  - [x] Define routes
+    - [x] Make the first child of the `main` tag the `Routes` component from `react-router-dom`.
+    - [x] Use the `Route` component to add an index route for the `Home` component at the `/` route
+    - [x] Import the `TransactionDetail` component into the `App.jsx` component.
+    - [x] Add a dynamic route with the base path of `transactions` that is used for displaying a single transaction with the `transactionId` path parameter. Display that page with the `TransactionDetail` component.
+  - [x] State variables
+    - [x] Create default state and handlers with React's `useState` hook for the following items. These won't cause any tests to pass, but we'll need them for the upcoming tests
+      - [x] `isLoading` - a boolean representing whether or not the app is currently requesting data from the API
+      - [x] `transactions` - the list of bank transaction items fetched from the API
+      - [x] `transfers` - the list of bank transfer items fetched from the API
+      - [x] `error` - any errors associated with fetching data from the API
+      - [x] `filterInputValue` - a string value used to create a controlled input in the `FilterInput.jsx` component
 
 ### Step 3: The `Navbar.jsx` and `FilterInput.jsx` components
 
 #### Inside the `Navbar.jsx` component:
     
-  - [ ] Render a nav link
+  - [x] Render a nav link
     - [ ] Render the `Logo` component as the first element nested inside the `nav` element
-    - [ ] Inside the `Logo` component, wrap the `img` element with a `Link` component from `react-router-dom`.
-    - [ ] Pass a `path` prop to the `Logo` component that corresponds to the `Home` route. Then pass that as the `to` prop in the `Link` component
-    - [ ] Clicking on the `img` element in the `Navbar` should now redirect to the Home route. Manually navigate to a different path and try it out in the browser.
+    - [x] Inside the `Logo` component, wrap the `img` element with a `Link` component from `react-router-dom`.
+    - [x] Pass a `path` prop to the `Logo` component that corresponds to the `Home` route. Then pass that as the `to` prop in the `Link` component
+    - [x] Clicking on the `img` element in the `Navbar` should now redirect to the Home route. Manually navigate to a different path and try it out in the browser.
 
 #### In the `App.jsx` component:
     
